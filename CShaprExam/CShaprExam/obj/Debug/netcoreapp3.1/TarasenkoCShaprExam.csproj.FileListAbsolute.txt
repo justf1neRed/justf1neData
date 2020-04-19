@@ -1,0 +1,11 @@
+C:\Users\thomas\source\repos\TarasenkoCShaprExam\TarasenkoCShaprExam\bin\Debug\netcoreapp3.1\TarasenkoCShaprExam.exe
+C:\Users\thomas\source\repos\TarasenkoCShaprExam\TarasenkoCShaprExam\bin\Debug\netcoreapp3.1\TarasenkoCShaprExam.deps.json
+C:\Users\thomas\source\repos\TarasenkoCShaprExam\TarasenkoCShaprExam\bin\Debug\netcoreapp3.1\TarasenkoCShaprExam.runtimeconfig.json
+C:\Users\thomas\source\repos\TarasenkoCShaprExam\TarasenkoCShaprExam\bin\Debug\netcoreapp3.1\TarasenkoCShaprExam.runtimeconfig.dev.json
+C:\Users\thomas\source\repos\TarasenkoCShaprExam\TarasenkoCShaprExam\bin\Debug\netcoreapp3.1\TarasenkoCShaprExam.dll
+C:\Users\thomas\source\repos\TarasenkoCShaprExam\TarasenkoCShaprExam\bin\Debug\netcoreapp3.1\TarasenkoCShaprExam.pdb
+C:\Users\thomas\source\repos\TarasenkoCShaprExam\TarasenkoCShaprExam\obj\Debug\netcoreapp3.1\TarasenkoCShaprExam.AssemblyInfoInputs.cache
+C:\Users\thomas\source\repos\TarasenkoCShaprExam\TarasenkoCShaprExam\obj\Debug\netcoreapp3.1\TarasenkoCShaprExam.AssemblyInfo.cs
+C:\Users\thomas\source\repos\TarasenkoCShaprExam\TarasenkoCShaprExam\obj\Debug\netcoreapp3.1\TarasenkoCShaprExam.dll
+C:\Users\thomas\source\repos\TarasenkoCShaprExam\TarasenkoCShaprExam\obj\Debug\netcoreapp3.1\TarasenkoCShaprExam.pdb
+C:\Users\thomas\source\repos\TarasenkoCShaprExam\TarasenkoCShaprExam\obj\Debug\netcoreapp3.1\TarasenkoCShaprExam.csprojAssemblyReference.cache
