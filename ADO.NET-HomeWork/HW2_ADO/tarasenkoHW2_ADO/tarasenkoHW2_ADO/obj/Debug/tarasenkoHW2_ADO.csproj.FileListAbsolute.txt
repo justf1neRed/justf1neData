@@ -1,0 +1,14 @@
+C:\Users\thomas\source\repos\tarasenkoHW2_ADO\tarasenkoHW2_ADO\bin\Debug\tarasenkoHW2_ADO.exe.config
+C:\Users\thomas\source\repos\tarasenkoHW2_ADO\tarasenkoHW2_ADO\bin\Debug\tarasenkoHW2_ADO.exe
+C:\Users\thomas\source\repos\tarasenkoHW2_ADO\tarasenkoHW2_ADO\bin\Debug\tarasenkoHW2_ADO.pdb
+C:\Users\thomas\source\repos\tarasenkoHW2_ADO\tarasenkoHW2_ADO\obj\Debug\tarasenkoHW2_ADO.csprojAssemblyReference.cache
+C:\Users\thomas\source\repos\tarasenkoHW2_ADO\tarasenkoHW2_ADO\obj\Debug\tarasenkoHW2_ADO.csproj.CoreCompileInputs.cache
+C:\Users\thomas\source\repos\tarasenkoHW2_ADO\tarasenkoHW2_ADO\obj\Debug\tarasenkoHW2_ADO.exe
+C:\Users\thomas\source\repos\tarasenkoHW2_ADO\tarasenkoHW2_ADO\obj\Debug\tarasenkoHW2_ADO.pdb
+C:\Users\thomas\Desktop\tarasenkoHW2_ADO\tarasenkoHW2_ADO\bin\Debug\tarasenkoHW2_ADO.exe.config
+C:\Users\thomas\Desktop\tarasenkoHW2_ADO\tarasenkoHW2_ADO\bin\Debug\tarasenkoHW2_ADO.exe
+C:\Users\thomas\Desktop\tarasenkoHW2_ADO\tarasenkoHW2_ADO\bin\Debug\tarasenkoHW2_ADO.pdb
+C:\Users\thomas\Desktop\tarasenkoHW2_ADO\tarasenkoHW2_ADO\obj\Debug\tarasenkoHW2_ADO.csprojAssemblyReference.cache
+C:\Users\thomas\Desktop\tarasenkoHW2_ADO\tarasenkoHW2_ADO\obj\Debug\tarasenkoHW2_ADO.csproj.CoreCompileInputs.cache
+C:\Users\thomas\Desktop\tarasenkoHW2_ADO\tarasenkoHW2_ADO\obj\Debug\tarasenkoHW2_ADO.exe
+C:\Users\thomas\Desktop\tarasenkoHW2_ADO\tarasenkoHW2_ADO\obj\Debug\tarasenkoHW2_ADO.pdb
