@@ -1,0 +1,59 @@
+.color_delev{
+    color:orchid ;
+  }
+  .footer_text{
+    color: rgb(175,177,189);   
+  }
+  .footer hr{
+    color:rgb(175,177,189);   
+  }
+  .button{
+    color: white;
+    background-color: rgb(254,160,0);    
+    border: 1px solid orange;
+  }
+  .pTeast{
+    color:white;   
+    }
+    .pfrom{        
+        color:orange;  
+      }
+      .colortext{
+        color:white;
+      }
+      .home_delivery_phone{
+        background-color: rgb(237,241,244);        
+      } 
+      .col_orange{
+        color:orange;
+      }  
+      .today_special{       
+        color:white;       
+      }  
+      .div_food_name{          
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      }
+      .h_border_t_gr{
+        border-top: 2px solid #d4d4d4;
+      }
+      .border_r_HOME{
+        border-right:2px solid #d4d4d4;       
+      }     
+      .price{       
+        color:orange ;      
+      }
+      .fb{
+        background-color: rgb(62,87,151);
+        border:1px solid rgb(62,87,151);      
+      }
+      .google{
+        background-color: rgb(225,74,57);
+        border:1px solid rgb(225,74,57);
+      }
+      .twitter{
+        background-color: rgb(80,175,241);
+        border:1px solid  rgb(80,175,241);    
+      }
+      .net{       
+        background-color: rgb(56, 56, 68);       
+      }

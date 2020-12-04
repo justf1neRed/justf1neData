@@ -1,0 +1,49 @@
+
+@import url('colors.css');
+@import url('fonts.css');
+@import url('dimentions.css');
+@import url('positions.css');
+ 
+
+/*div{
+    border: 1px solid black;    
+}*/
+
+@media (min-width: 651px) and (max-width: 1075px)
+ {     
+    .header div{
+     margin: 5px;
+    }
+ }
+ @media (max-width: 650px)
+  {     
+    .header div{
+     margin: 5px;
+    }
+    .header  {
+     flex-direction: column;
+    }
+    .header .menu ul {
+     flex-direction: column;
+     align-self: center;
+    }  
+  }
+ @media (max-width: 1410px) 
+  {
+    .today_special
+    {
+    top:20px;
+    }
+  }  
+        
+   @media (max-width:981px){
+       .price{
+        padding-left: 50px;  
+       }
+
+   }     
+       
+              
+
+ 
+

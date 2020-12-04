@@ -1,0 +1,69 @@
+.min_w_880{
+    min-width: 880px;
+  }
+  .min_w_650{
+    min-width: 650px;
+  }
+  .w100proc{
+    width: 100%;
+  }
+  .img_net{
+    width: auto;    
+   }
+   .footer{  
+    width: 100%;
+    }
+    .div_hr_r{
+        width: 30%;       
+      }
+      .div_hr_l{
+        width: 30%;        
+      }  
+    .footer hr{       
+        size: 0.5px;
+      }
+      .header
+      {
+         min-width: 650px;
+      }
+      .pTeast{       
+        width:100%;
+        }
+        .pfrom{            
+            width:100%;
+          }
+img {
+ width: 100%;            
+    } 
+    .home_delivery_phone{
+        background-color: rgb(237,241,244);  
+        width: 100%; 
+      }     
+      .home_delivery_phone{        
+        width: 100%; 
+      } 
+      .home_delivery_phone img{        
+        max-width:30px;
+       } 
+       .img_button{  
+        width:15px;       
+      }  
+      .img_main_Teast{        
+        max-width: 450px;      
+      } 
+      .about{
+        max-width: 600px;       
+      }   
+      .div_food_name{
+        min-width: 50px;
+        max-width: 500px;          
+      } 
+      .button_circle{
+        border-radius: 50%;
+        height: 50px;
+        width: 50px; 
+      }
+      .net{      
+        width: 100%;       
+        height: 200px;
+      }

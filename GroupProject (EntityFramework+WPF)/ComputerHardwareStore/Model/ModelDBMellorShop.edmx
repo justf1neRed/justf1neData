@@ -1,0 +1,758 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище MellorShopModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="ID_Invoice" />
+          </Key>
+          <Property Name="ID_Invoice" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateInvoice" Type="smalldatetime" Nullable="false" />
+          <Property Name="ID_UserBuyer" Type="int" Nullable="false" />
+          <Property Name="ID_OrderStatus" Type="int" Nullable="false" />
+          <Property Name="ID_Personnel" Type="int" Nullable="false" />
+          <Property Name="TotalSumm" Type="money" Nullable="false" />
+          <Property Name="DeliveryAddress" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderBuy">
+          <Key>
+            <PropertyRef Name="ID_OrderBuy" />
+          </Key>
+          <Property Name="ID_OrderBuy" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VendoreCode" Type="int" Nullable="false" />
+          <Property Name="ID_Invoice" Type="int" Nullable="false" />
+          <Property Name="QuantityProduct" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="ID_Category" />
+          </Key>
+          <Property Name="ID_Category" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameCategory" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Manufacturer">
+          <Key>
+            <PropertyRef Name="ID_Manufacturer" />
+          </Key>
+          <Property Name="ID_Manufacturer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameManufacturer" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderStatus">
+          <Key>
+            <PropertyRef Name="ID_OrderStatus" />
+          </Key>
+          <Property Name="ID_OrderStatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameOrderStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Personnel">
+          <Key>
+            <PropertyRef Name="ID_Personnel" />
+          </Key>
+          <Property Name="ID_Personnel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Position" Type="int" Nullable="false" />
+          <Property Name="SurNamePers" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NamePers" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="PhonePers" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LoginPers" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PasswordPers" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="ID_Position" />
+          </Key>
+          <Property Name="ID_Position" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NamePosition" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="VendoreCode" />
+          </Key>
+          <Property Name="VendoreCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameProduct" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ID_Category" Type="int" Nullable="false" />
+          <Property Name="ID_Manufacturer" Type="int" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Remainder" Type="int" Nullable="false" />
+          <Property Name="Specification" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="UserBuyer">
+          <Key>
+            <PropertyRef Name="ID_UserBuyer" />
+          </Key>
+          <Property Name="ID_UserBuyer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameUserBuyer" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ContactPhone" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "MellorShop.db_datareader.v_InvoiceInfo" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="v_InvoiceInfo">
+          <Key>
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Category" />
+            <PropertyRef Name="Product" />
+            <PropertyRef Name="Quant" />
+            <PropertyRef Name="Price" />
+            <PropertyRef Name="ID_Invoice" />
+            <PropertyRef Name="ID_OrderBuy" />
+          </Key>
+          <Property Name="Code" Type="int" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Product" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Quant" Type="int" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="ID_Invoice" Type="int" Nullable="false" />
+          <Property Name="ID_OrderBuy" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "MellorShop.db_datareader.v_ProductUser" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="v_ProductUser">
+          <Key>
+            <PropertyRef Name="Category" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Manufacturer" />
+            <PropertyRef Name="Price" />
+            <PropertyRef Name="Quantity" />
+          </Key>
+          <Property Name="Category" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Manufacturer" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Specification" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "MellorShop.db_datareader.v_UserData" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="v_UserData">
+          <Key>
+            <PropertyRef Name="ID_Invoice" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Phone" />
+          </Key>
+          <Property Name="ID_Invoice" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Invoice__ID_Orde__2645B050">
+          <End Role="OrderStatus" Type="Self.OrderStatus" Multiplicity="1" />
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderStatus">
+              <PropertyRef Name="ID_OrderStatus" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="ID_OrderStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Invoice__ID_Pers__2739D489">
+          <End Role="Personnel" Type="Self.Personnel" Multiplicity="1" />
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personnel">
+              <PropertyRef Name="ID_Personnel" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="ID_Personnel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Invoice__ID_User__25518C17">
+          <End Role="UserBuyer" Type="Self.UserBuyer" Multiplicity="1" />
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserBuyer">
+              <PropertyRef Name="ID_UserBuyer" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="ID_UserBuyer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderBuy__ID_Inv__2DE6D218">
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="1" />
+          <End Role="OrderBuy" Type="Self.OrderBuy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invoice">
+              <PropertyRef Name="ID_Invoice" />
+            </Principal>
+            <Dependent Role="OrderBuy">
+              <PropertyRef Name="ID_Invoice" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderBuy__Vendor__2CF2ADDF">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="OrderBuy" Type="Self.OrderBuy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="VendoreCode" />
+            </Principal>
+            <Dependent Role="OrderBuy">
+              <PropertyRef Name="VendoreCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Personnel__ID_Po__6A30C649">
+          <End Role="Position" Type="Self.Position" Multiplicity="1" />
+          <End Role="Personnel" Type="Self.Personnel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="ID_Position" />
+            </Principal>
+            <Dependent Role="Personnel">
+              <PropertyRef Name="ID_Position" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__ID_Cate__5FB337D6">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="ID_Category" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ID_Category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__ID_Manu__60A75C0F">
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacturer">
+              <PropertyRef Name="ID_Manufacturer" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ID_Manufacturer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="stp_UserBuyerAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NameUserBuyer" Type="nvarchar" Mode="In" />
+          <Parameter Name="ContactPhone" Type="nvarchar" Mode="In" />
+          <Parameter Name="ID_UserBuyer" Type="int" Mode="InOut" />
+        </Function>
+        <EntityContainer Name="Хранилище MellorShopModelContainer">
+          <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="db_datareader" store:Type="Tables" />
+          <EntitySet Name="OrderBuy" EntityType="Self.OrderBuy" Schema="db_datareader" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderStatus" EntityType="Self.OrderStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personnel" EntityType="Self.Personnel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserBuyer" EntityType="Self.UserBuyer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="v_InvoiceInfo" EntityType="Self.v_InvoiceInfo" store:Type="Views" store:Schema="db_datareader">
+            <DefiningQuery>SELECT 
+    [v_InvoiceInfo].[Code] AS [Code], 
+    [v_InvoiceInfo].[Category] AS [Category], 
+    [v_InvoiceInfo].[Product] AS [Product], 
+    [v_InvoiceInfo].[Quant] AS [Quant], 
+    [v_InvoiceInfo].[Price] AS [Price], 
+    [v_InvoiceInfo].[ID_Invoice] AS [ID_Invoice], 
+    [v_InvoiceInfo].[ID_OrderBuy] AS [ID_OrderBuy]
+    FROM [db_datareader].[v_InvoiceInfo] AS [v_InvoiceInfo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_ProductUser" EntityType="Self.v_ProductUser" store:Type="Views" store:Schema="db_datareader">
+            <DefiningQuery>SELECT 
+    [v_ProductUser].[Category] AS [Category], 
+    [v_ProductUser].[Name] AS [Name], 
+    [v_ProductUser].[Manufacturer] AS [Manufacturer], 
+    [v_ProductUser].[Price] AS [Price], 
+    [v_ProductUser].[Quantity] AS [Quantity], 
+    [v_ProductUser].[Specification] AS [Specification]
+    FROM [db_datareader].[v_ProductUser] AS [v_ProductUser]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_UserData" EntityType="Self.v_UserData" store:Type="Views" store:Schema="db_datareader">
+            <DefiningQuery>SELECT 
+    [v_UserData].[ID_Invoice] AS [ID_Invoice], 
+    [v_UserData].[Name] AS [Name], 
+    [v_UserData].[Phone] AS [Phone]
+    FROM [db_datareader].[v_UserData] AS [v_UserData]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Invoice__ID_Orde__2645B050" Association="Self.FK__Invoice__ID_Orde__2645B050">
+            <End Role="OrderStatus" EntitySet="OrderStatus" />
+            <End Role="Invoice" EntitySet="Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Invoice__ID_Pers__2739D489" Association="Self.FK__Invoice__ID_Pers__2739D489">
+            <End Role="Personnel" EntitySet="Personnel" />
+            <End Role="Invoice" EntitySet="Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Invoice__ID_User__25518C17" Association="Self.FK__Invoice__ID_User__25518C17">
+            <End Role="UserBuyer" EntitySet="UserBuyer" />
+            <End Role="Invoice" EntitySet="Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderBuy__ID_Inv__2DE6D218" Association="Self.FK__OrderBuy__ID_Inv__2DE6D218">
+            <End Role="Invoice" EntitySet="Invoice" />
+            <End Role="OrderBuy" EntitySet="OrderBuy" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderBuy__Vendor__2CF2ADDF" Association="Self.FK__OrderBuy__Vendor__2CF2ADDF">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="OrderBuy" EntitySet="OrderBuy" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Personnel__ID_Po__6A30C649" Association="Self.FK__Personnel__ID_Po__6A30C649">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="Personnel" EntitySet="Personnel" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__ID_Cate__5FB337D6" Association="Self.FK__Product__ID_Cate__5FB337D6">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__ID_Manu__60A75C0F" Association="Self.FK__Product__ID_Manu__60A75C0F">
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MellorShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="ID_Invoice" />
+          </Key>
+          <Property Name="ID_Invoice" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateInvoice" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ID_UserBuyer" Type="Int32" Nullable="false" />
+          <Property Name="ID_OrderStatus" Type="Int32" Nullable="false" />
+          <Property Name="ID_Personnel" Type="Int32" Nullable="false" />
+          <Property Name="TotalSumm" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="DeliveryAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="OrderStatus" Relationship="Self.FK__Invoice__ID_Orde__17F790F9" FromRole="Invoice" ToRole="OrderStatus" />
+          <NavigationProperty Name="Personnel" Relationship="Self.FK__Invoice__ID_Pers__18EBB532" FromRole="Invoice" ToRole="Personnel" />
+          <NavigationProperty Name="UserBuyer" Relationship="Self.FK__Invoice__ID_User__17036CC0" FromRole="Invoice" ToRole="UserBuyer" />
+          <NavigationProperty Name="OrderBuy" Relationship="Self.FK__OrderBuy__ID_Inv__1F98B2C1" FromRole="Invoice" ToRole="OrderBuy" />
+        </EntityType>
+        <EntityType Name="OrderBuy">
+          <Key>
+            <PropertyRef Name="ID_OrderBuy" />
+          </Key>
+          <Property Name="ID_OrderBuy" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VendoreCode" Type="Int32" Nullable="false" />
+          <Property Name="ID_Invoice" Type="Int32" Nullable="false" />
+          <Property Name="QuantityProduct" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Invoice" Relationship="Self.FK__OrderBuy__ID_Inv__1F98B2C1" FromRole="OrderBuy" ToRole="Invoice" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__OrderBuy__Vendor__1EA48E88" FromRole="OrderBuy" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="ID_Category" />
+          </Key>
+          <Property Name="ID_Category" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__Product__ID_Cate__5FB337D6" FromRole="Category" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Manufacturer">
+          <Key>
+            <PropertyRef Name="ID_Manufacturer" />
+          </Key>
+          <Property Name="ID_Manufacturer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameManufacturer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__Product__ID_Manu__60A75C0F" FromRole="Manufacturer" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="OrderStatus">
+          <Key>
+            <PropertyRef Name="ID_OrderStatus" />
+          </Key>
+          <Property Name="ID_OrderStatus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameOrderStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Invoice" Relationship="Self.FK__Invoice__ID_Orde__17F790F9" FromRole="OrderStatus" ToRole="Invoice" />
+        </EntityType>
+        <EntityType Name="Personnel">
+          <Key>
+            <PropertyRef Name="ID_Personnel" />
+          </Key>
+          <Property Name="ID_Personnel" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Position" Type="Int32" Nullable="false" />
+          <Property Name="SurNamePers" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NamePers" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PhonePers" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LoginPers" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PasswordPers" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Invoice" Relationship="Self.FK__Invoice__ID_Pers__18EBB532" FromRole="Personnel" ToRole="Invoice" />
+          <NavigationProperty Name="Position" Relationship="Self.FK__Personnel__ID_Po__6A30C649" FromRole="Personnel" ToRole="Position" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="ID_Position" />
+          </Key>
+          <Property Name="ID_Position" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NamePosition" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Personnel" Relationship="Self.FK__Personnel__ID_Po__6A30C649" FromRole="Position" ToRole="Personnel" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="VendoreCode" />
+          </Key>
+          <Property Name="VendoreCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameProduct" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID_Category" Type="Int32" Nullable="false" />
+          <Property Name="ID_Manufacturer" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Remainder" Type="Int32" Nullable="false" />
+          <Property Name="Specification" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OrderBuy" Relationship="Self.FK__OrderBuy__Vendor__1EA48E88" FromRole="Product" ToRole="OrderBuy" />
+          <NavigationProperty Name="Category" Relationship="Self.FK__Product__ID_Cate__5FB337D6" FromRole="Product" ToRole="Category" />
+          <NavigationProperty Name="Manufacturer" Relationship="Self.FK__Product__ID_Manu__60A75C0F" FromRole="Product" ToRole="Manufacturer" />
+        </EntityType>
+        <EntityType Name="UserBuyer">
+          <Key>
+            <PropertyRef Name="ID_UserBuyer" />
+          </Key>
+          <Property Name="ID_UserBuyer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameUserBuyer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContactPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Invoice" Relationship="Self.FK__Invoice__ID_User__17036CC0" FromRole="UserBuyer" ToRole="Invoice" />
+        </EntityType>
+        <EntityType Name="v_ProductUser">
+          <Key>
+            <PropertyRef Name="Category" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Manufacturer" />
+            <PropertyRef Name="Price" />
+            <PropertyRef Name="Quantity" />
+          </Key>
+          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Manufacturer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Specification" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK__Invoice__ID_Orde__17F790F9">
+          <End Role="OrderStatus" Type="Self.OrderStatus" Multiplicity="1" />
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderStatus">
+              <PropertyRef Name="ID_OrderStatus" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="ID_OrderStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Invoice__ID_Pers__18EBB532">
+          <End Role="Personnel" Type="Self.Personnel" Multiplicity="1" />
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personnel">
+              <PropertyRef Name="ID_Personnel" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="ID_Personnel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Invoice__ID_User__17036CC0">
+          <End Role="UserBuyer" Type="Self.UserBuyer" Multiplicity="1" />
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserBuyer">
+              <PropertyRef Name="ID_UserBuyer" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="ID_UserBuyer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderBuy__ID_Inv__1F98B2C1">
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="1" />
+          <End Role="OrderBuy" Type="Self.OrderBuy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invoice">
+              <PropertyRef Name="ID_Invoice" />
+            </Principal>
+            <Dependent Role="OrderBuy">
+              <PropertyRef Name="ID_Invoice" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderBuy__Vendor__1EA48E88">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="OrderBuy" Type="Self.OrderBuy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="VendoreCode" />
+            </Principal>
+            <Dependent Role="OrderBuy">
+              <PropertyRef Name="VendoreCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__ID_Cate__5FB337D6">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="ID_Category" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ID_Category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__ID_Manu__60A75C0F">
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacturer">
+              <PropertyRef Name="ID_Manufacturer" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ID_Manufacturer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Personnel__ID_Po__6A30C649">
+          <End Role="Position" Type="Self.Position" Multiplicity="1" />
+          <End Role="Personnel" Type="Self.Personnel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="ID_Position" />
+            </Principal>
+            <Dependent Role="Personnel">
+              <PropertyRef Name="ID_Position" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MellorShopEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Invoice" EntityType="Self.Invoice" />
+          <EntitySet Name="OrderBuy" EntityType="Self.OrderBuy" />
+          <EntitySet Name="Category" EntityType="Self.Category" />
+          <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" />
+          <EntitySet Name="OrderStatus" EntityType="Self.OrderStatus" />
+          <EntitySet Name="Personnel" EntityType="Self.Personnel" />
+          <EntitySet Name="Position" EntityType="Self.Position" />
+          <EntitySet Name="Product" EntityType="Self.Product" />
+          <EntitySet Name="UserBuyer" EntityType="Self.UserBuyer" />
+          <EntitySet Name="v_ProductUser" EntityType="Self.v_ProductUser" />
+          <AssociationSet Name="FK__Invoice__ID_Orde__17F790F9" Association="Self.FK__Invoice__ID_Orde__17F790F9">
+            <End Role="OrderStatus" EntitySet="OrderStatus" />
+            <End Role="Invoice" EntitySet="Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Invoice__ID_Pers__18EBB532" Association="Self.FK__Invoice__ID_Pers__18EBB532">
+            <End Role="Personnel" EntitySet="Personnel" />
+            <End Role="Invoice" EntitySet="Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Invoice__ID_User__17036CC0" Association="Self.FK__Invoice__ID_User__17036CC0">
+            <End Role="UserBuyer" EntitySet="UserBuyer" />
+            <End Role="Invoice" EntitySet="Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderBuy__ID_Inv__1F98B2C1" Association="Self.FK__OrderBuy__ID_Inv__1F98B2C1">
+            <End Role="Invoice" EntitySet="Invoice" />
+            <End Role="OrderBuy" EntitySet="OrderBuy" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderBuy__Vendor__1EA48E88" Association="Self.FK__OrderBuy__Vendor__1EA48E88">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="OrderBuy" EntitySet="OrderBuy" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__ID_Cate__5FB337D6" Association="Self.FK__Product__ID_Cate__5FB337D6">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__ID_Manu__60A75C0F" Association="Self.FK__Product__ID_Manu__60A75C0F">
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Personnel__ID_Po__6A30C649" Association="Self.FK__Personnel__ID_Po__6A30C649">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="Personnel" EntitySet="Personnel" />
+          </AssociationSet>
+          <FunctionImport Name="stp_UserBuyerAdd">
+            <Parameter Name="NameUserBuyer" Mode="In" Type="String" />
+            <Parameter Name="ContactPhone" Mode="In" Type="String" />
+            <Parameter Name="ID_UserBuyer" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="v_InvoiceInfo" EntityType="MellorShopModel.v_InvoiceInfo" />
+          <EntitySet Name="v_UserData" EntityType="MellorShopModel.v_UserData" />
+        </EntityContainer>
+        <EntityType Name="v_InvoiceInfo">
+          <Key>
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Category" />
+            <PropertyRef Name="Product" />
+            <PropertyRef Name="Quant" />
+            <PropertyRef Name="Price" />
+            <PropertyRef Name="ID_Invoice" />
+            <PropertyRef Name="ID_OrderBuy" />
+          </Key>
+          <Property Name="Code" Type="Int32" Nullable="false" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Product" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Quant" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="ID_Invoice" Type="Int32" Nullable="false" />
+          <Property Name="ID_OrderBuy" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="v_UserData">
+          <Key>
+            <PropertyRef Name="ID_Invoice" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Phone" />
+          </Key>
+          <Property Name="ID_Invoice" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище MellorShopModelContainer" CdmEntityContainer="MellorShopEntities1">
+          <EntitySetMapping Name="Invoice">
+            <EntityTypeMapping TypeName="MellorShopModel.Invoice">
+              <MappingFragment StoreEntitySet="Invoice">
+                <ScalarProperty Name="ID_Invoice" ColumnName="ID_Invoice" />
+                <ScalarProperty Name="DateInvoice" ColumnName="DateInvoice" />
+                <ScalarProperty Name="ID_UserBuyer" ColumnName="ID_UserBuyer" />
+                <ScalarProperty Name="ID_OrderStatus" ColumnName="ID_OrderStatus" />
+                <ScalarProperty Name="ID_Personnel" ColumnName="ID_Personnel" />
+                <ScalarProperty Name="TotalSumm" ColumnName="TotalSumm" />
+                <ScalarProperty Name="DeliveryAddress" ColumnName="DeliveryAddress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderBuy">
+            <EntityTypeMapping TypeName="MellorShopModel.OrderBuy">
+              <MappingFragment StoreEntitySet="OrderBuy">
+                <ScalarProperty Name="ID_OrderBuy" ColumnName="ID_OrderBuy" />
+                <ScalarProperty Name="VendoreCode" ColumnName="VendoreCode" />
+                <ScalarProperty Name="ID_Invoice" ColumnName="ID_Invoice" />
+                <ScalarProperty Name="QuantityProduct" ColumnName="QuantityProduct" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Category">
+            <EntityTypeMapping TypeName="MellorShopModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="ID_Category" ColumnName="ID_Category" />
+                <ScalarProperty Name="NameCategory" ColumnName="NameCategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Manufacturer">
+            <EntityTypeMapping TypeName="MellorShopModel.Manufacturer">
+              <MappingFragment StoreEntitySet="Manufacturer">
+                <ScalarProperty Name="ID_Manufacturer" ColumnName="ID_Manufacturer" />
+                <ScalarProperty Name="NameManufacturer" ColumnName="NameManufacturer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderStatus">
+            <EntityTypeMapping TypeName="MellorShopModel.OrderStatus">
+              <MappingFragment StoreEntitySet="OrderStatus">
+                <ScalarProperty Name="ID_OrderStatus" ColumnName="ID_OrderStatus" />
+                <ScalarProperty Name="NameOrderStatus" ColumnName="NameOrderStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personnel">
+            <EntityTypeMapping TypeName="MellorShopModel.Personnel">
+              <MappingFragment StoreEntitySet="Personnel">
+                <ScalarProperty Name="ID_Personnel" ColumnName="ID_Personnel" />
+                <ScalarProperty Name="ID_Position" ColumnName="ID_Position" />
+                <ScalarProperty Name="SurNamePers" ColumnName="SurNamePers" />
+                <ScalarProperty Name="NamePers" ColumnName="NamePers" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="PhonePers" ColumnName="PhonePers" />
+                <ScalarProperty Name="LoginPers" ColumnName="LoginPers" />
+                <ScalarProperty Name="PasswordPers" ColumnName="PasswordPers" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Position">
+            <EntityTypeMapping TypeName="MellorShopModel.Position">
+              <MappingFragment StoreEntitySet="Position">
+                <ScalarProperty Name="ID_Position" ColumnName="ID_Position" />
+                <ScalarProperty Name="NamePosition" ColumnName="NamePosition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product">
+            <EntityTypeMapping TypeName="MellorShopModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="VendoreCode" ColumnName="VendoreCode" />
+                <ScalarProperty Name="NameProduct" ColumnName="NameProduct" />
+                <ScalarProperty Name="ID_Category" ColumnName="ID_Category" />
+                <ScalarProperty Name="ID_Manufacturer" ColumnName="ID_Manufacturer" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Remainder" ColumnName="Remainder" />
+                <ScalarProperty Name="Specification" ColumnName="Specification" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserBuyer">
+            <EntityTypeMapping TypeName="MellorShopModel.UserBuyer">
+              <MappingFragment StoreEntitySet="UserBuyer">
+                <ScalarProperty Name="ID_UserBuyer" ColumnName="ID_UserBuyer" />
+                <ScalarProperty Name="NameUserBuyer" ColumnName="NameUserBuyer" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_ProductUser">
+            <EntityTypeMapping TypeName="MellorShopModel.v_ProductUser">
+              <MappingFragment StoreEntitySet="v_ProductUser">
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Specification" ColumnName="Specification" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="stp_UserBuyerAdd" FunctionName="Хранилище MellorShopModel.stp_UserBuyerAdd" />
+          <EntitySetMapping Name="v_InvoiceInfo">
+            <EntityTypeMapping TypeName="MellorShopModel.v_InvoiceInfo">
+              <MappingFragment StoreEntitySet="v_InvoiceInfo">
+                <ScalarProperty Name="ID_OrderBuy" ColumnName="ID_OrderBuy" />
+                <ScalarProperty Name="ID_Invoice" ColumnName="ID_Invoice" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quant" ColumnName="Quant" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_UserData">
+            <EntityTypeMapping TypeName="MellorShopModel.v_UserData">
+              <MappingFragment StoreEntitySet="v_UserData">
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID_Invoice" ColumnName="ID_Invoice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

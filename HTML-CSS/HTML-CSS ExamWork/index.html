@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ExamCSS</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header id="header" class="header">
+        <div class="container wrap_container top_menu">
+                    <a href="#">
+                        <img src="images/house.jpg.png" alt="house image">
+                    </a>                  
+                    <a href="#">Главная</a>
+                    <a href="#">Каталог Товаров</a>
+                    <a href="#">Воздушные шары</a>       
+        </div>
+    </header>
+
+    <div class="site_body">
+        <div>
+            <h1>Каталог шариков</h1>
+        </div>
+        <div class="container wrap_container filters"> 
+            <div class="container wrap_container colors">
+                    <p>Цвет:</p>
+                    <div class="circle red">
+                        <input type="radio" name="color" class="color_rb" value="1">
+                    </div>
+                    <div class="circle black_with_radius">
+                        <input type="radio" name="color" class="color_rb" value="2">
+                    </div>
+                    <div class="circle yellow">
+                        <input type="radio" name="color" class="color_rb" value="3">
+                    </div>
+
+                    <div class="circle green">
+                        <input type="radio" name="color" class="color_rb" value="4">
+                    </div>
+                    <div class="circle pink">
+                        <input type="radio" name="color" class="color_rb" value="5">
+                    </div>
+                    <div class="circle orange">
+                        <input type="radio" name="color" class="color_rb" value="6">
+                    </div>                    
+            </div>
+            <div class="pretty_border first_border">|</div>
+            <div class="container wrap_container quantity_select">
+                <input type="checkbox" name="ball_stack" value="1"><p>Все шары</p>                
+                <input type="checkbox" name="ball_stack" value="1" checked><p>Комплект</p>
+                <input type="checkbox" name="ball_stack" value="1" ><p>По одному</p>
+            </div>
+            <div class="pretty_border second_border">|</div>
+            <div class="container sort">
+                <p>Сортировка по:</p>
+                <p>Цене</p>
+                <img src="images/up_arrow.png" alt="Up arrow">
+                <img src="images/down_arrow.png" alt="Down arrow">
+            </div>
+        </div>
+
+        <div class="container wrap_container content" id="product">
+            <div class="container ball_content">
+                <img src="images/pink_ball.jpg.png" alt="pink ball">                
+                <a href="#">Шары  &lt;&lt;Звёзды и Кометы >></a>
+                <p>Фигуры, латексный, полупрозрачный, 
+                   средний, красный
+                </p>
+                <p>75 грн/
+                    <span>шт</span>
+                </p>
+                <div class="discount">
+                    <img src="images/90R.jpg.png" alt="90rub" class="rub">
+                    <img src="images/red_line.jpg.png" alt="red line" class="red_line">
+                </div>
+                <div class="container buy">
+                    <div>
+                        <input type="text" value="200шт">
+                    </div>
+                    <div class="container plus_minus">
+                        <img src="images/+.png" alt="+">
+                        <img src="images/-.png" alt="-">
+                    </div>
+                    <div class="container cart">                        
+                        <a href="https://www.paypal.com/ua/home">
+                            <img src="images/cart.png" alt="cart">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container ball_content">
+                <img src="images/yellow_ball.jpg.png" alt="pink ball">                
+                <a href="#">Шары  &lt;&lt;Звёзды>></a>
+                <p>Фигуры, латексный, полупрозрачный, 
+                   средний, красный
+                </p>
+                <p>15 075 грн/
+                    <span>шт</span>
+                </p>
+                <div class="discount">
+                    <img src="images/90R.jpg.png" alt="90rub" class="rub">
+                    <img src="images/red_line.jpg.png" alt="red line" class="red_line">
+                </div>
+                <form action="POST" class="container buy">                    
+                    <div>
+                        <input type="text" value="200шт">
+                    </div>
+                    <div class="container plus_minus">
+                        <img src="images/+.png" alt="+">
+                        <img src="images/-.png" alt="-">
+                    </div>
+
+                    <div class="container cart">                        
+                        <a href="https://www.paypal.com/ua/home">
+                            <img src="images/cart.png" alt="cart">
+                        </a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="container ball_content">
+                <img src="images/pink_ball.jpg.png" alt="pink ball">                
+                <a href="#">Шары  &lt;&lt;Звёзды и Кометы >></a>
+                <p>Фигуры, латексный, полупрозрачный, 
+                   средний, красный
+                </p>
+                <p>75 грн/
+                    <span>шт</span>
+                </p>
+                <div class="discount">
+                    <img src="images/90R.jpg.png" alt="90rub" class="rub">
+                    <img src="images/red_line.jpg.png" alt="red line" class="red_line">
+                </div>
+                <div class="container buy">
+                    <div>
+                        <input type="text" value="200шт">
+                    </div>
+                    <div class="container plus_minus">
+                        <img src="images/+.png" alt="+">
+                        <img src="images/-.png" alt="-">
+                    </div>
+                    <div class="container cart">
+                        <a href="https://www.paypal.com/ua/home">
+                            <img src="images/cart.png" alt="cart">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container ball_content">
+                <img src="images/yellow_ball.jpg.png" alt="pink ball">                
+                <a href="#">Шары  &lt;&lt;Звёзды>></a>
+                <p>Фигуры, латексный, полупрозрачный, 
+                   средний, красный
+                </p>
+                <p>15 075 грн/
+                    <span>шт</span>
+                </p>
+                <div class="discount">
+                    <img src="images/90R.jpg.png" alt="90rub" class="rub">
+                    <img src="images/red_line.jpg.png" alt="red line" class="red_line">
+                </div>
+                <form action="POST" class="container buy">                    
+                    <div>
+                        <input type="text" value="200шт">
+                    </div>
+                    <div class="container plus_minus">
+                        <img src="images/+.png" alt="+">
+                        <img src="images/-.png" alt="-">
+                    </div>
+                    <div class="container cart">                        
+                        <a href="https://www.paypal.com/ua/home">
+                            <img src="images/cart.png" alt="cart">
+                        </a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="container ball_content">
+                <img src="images/yellow_ball.jpg.png" alt="pink ball">                
+                <a href="#">Шары  &lt;&lt;Звёзды>></a>
+                <p>Фигуры, латексный, полупрозрачный, 
+                средний, красный
+                </p>
+                <p>15 075 грн/
+                    <span>шт</span>
+                </p>
+                <div class="discount">
+                    <img src="images/90R.jpg.png" alt="90rub" class="rub">
+                    <img src="images/red_line.jpg.png" alt="red line" class="red_line">
+                </div>
+                <form action="POST" class="container buy">                    
+                    <div>
+                        <input type="text" value="200шт">
+                    </div>
+                    <div class="container plus_minus">
+                        <img src="images/+.png" alt="+">
+                        <img src="images/-.png" alt="-">
+                    </div>
+                    <div class="container cart">                        
+                        <a href="https://www.paypal.com/ua/home">
+                            <img src="images/cart.png" alt="cart">
+                        </a>
+                    </div>
+                </form>
+            </div>
+
+             <div class="container ball_content">
+                <img src="images/yellow_ball.jpg.png" alt="pink ball">                
+                <a href="#">Шары  &lt;&lt;Звёзды>></a>
+                <p>Фигуры, латексный, полупрозрачный, 
+                   средний, красный
+                </p>
+                <p>15 075 грн/
+                    <span>шт</span>
+                </p>
+                <div class="discount">
+                    <img src="images/90R.jpg.png" alt="90rub" class="rub">
+                    <img src="images/red_line.jpg.png" alt="red line" class="red_line">
+                </div>
+                <form action="POST" class="container buy">                    
+                    <div>
+                        <input type="text" value="200шт">
+                    </div>
+                    
+                    <div class="container plus_minus">
+                        <img src="images/+.png" alt="+">
+                        <img src="images/-.png" alt="-">
+                    </div>
+
+                    <div class="container cart">                        
+                        <a href="https://www.paypal.com/ua/home">
+                            <img src="images/cart.png" alt="cart">
+                        </a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="container ball_content">
+                <img src="images/pink_ball.jpg.png" alt="pink ball">                
+                <a href="#">Шары  &lt;&lt;Звёзды и Кометы >></a>
+                <p>Фигуры, латексный, полупрозрачный, 
+                   средний, красный
+                </p>
+                <p>75 грн/
+                    <span>шт</span>
+                </p>
+                <div class="discount">
+                    <img src="images/90R.jpg.png" alt="90rub" class="rub">
+                    <img src="images/red_line.jpg.png" alt="red line" class="red_line">
+                </div>
+
+                <div class="container buy">
+                    <div>
+                        <input type="text" value="200шт">
+                    </div>
+                    
+                    <div class="container plus_minus">
+                        <img src="images/+.png" alt="+">
+                        <img src="images/-.png" alt="-">
+                    </div>
+
+                    <div class="container cart">
+                        <a href="https://www.paypal.com/ua/home">
+                            <img src="images/cart.png" alt="cart">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container foot">
+        <div class="container">
+            <img src="images/arrow_left.png" alt="arrow left">
+            <a href="#">Назад</a>
+        </div>
+        <div class="conteiner page_nums">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">...</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
+            <a href="#">8</a>
+        </div>
+        <div class="container">            
+            <a href="#">Далее</a>
+            <img src="images/arrow_right.png" alt="arrow right">
+        </div>
+    </div>
+</body>
+</html>
