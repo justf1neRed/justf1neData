@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam</title>
+
+    <style>
+
+        #mainDiv{
+            display: flex;
+        }
+
+        #buttonsDiv{
+            margin: 10px;
+            width: 15%;
+            height: max-content;
+            text-align: center;
+            border: solid 1px darkblue;
+            background-color: skyblue;
+        }
+
+        #tableDiv{
+            margin: 10px;
+            width: 65%;
+            height: auto;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            border: solid 1px darkblue;
+            background-color: skyblue;
+        }
+
+        #addEditDiv{
+            width: auto;
+            margin-top: 10px;
+            height: max-content;
+            flex-direction: column;
+            text-align: center;
+            margin-left: 10%;
+            margin-right: 10%;
+            visibility: hidden;
+            border: solid 1px darkblue;
+            background-color: skyblue;
+        }
+
+        input{
+            margin: 3px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="mainDiv">
+        <div id="buttonsDiv">
+            <input type="button" value="Load Base" id="loadBaseBtn">
+            <input type="button" value="Create User" id="createUserBtn">
+        </div>
+        <div id="tableDiv">
+            <h4>All Users in Base:</h4>
+            <table id="mainTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Middlename</th>
+                        <th>Password</th>
+                        <th>Picture</th>
+                        <th>Birthdate</th>
+                        <th>Registrated</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div id="addEditDiv">
+            <h4>User Information:</h4>
+            <div>
+                <label for="FirstName">Firstname:</label>
+                <input type="text" id="FirstName">
+            </div>
+            <div>
+                <label for="LastName">Lastname:</label>
+                <input type="text" id="LastName">
+            </div>
+            <div>
+                <label for="MiddleName">Middlename:</label>
+                <input type="text" id="MiddleName">
+            </div>
+            <div>
+                <label for="Password">Password:</label>
+                <input type="text" id="Password">
+            </div>
+            <div>
+                <label for="BirthDate">Birthdate:</label>
+                <input type="date" id="BirthDate">
+            </div>
+            <div>
+                <label for="Picture">Picture:</label>
+                <input type="image" id="Picture" src="userPic.png">
+            </div>
+            <div>
+                <input type="button" value="OK" id="okayUserBtn">
+                <input type="button" value="Cancel" id="cancelBtn"> 
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <style>
+
+        div{
+            align-items: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 14pt;
+        }
+
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .item-singleLine{
+            width: 400px;
+            height: 40px;
+            line-height: 40px;
+            margin-bottom: 1px;
+            border: solid black 1px;
+            text-align: center;
+            background-color:rgb(135, 206, 250);
+            
+        }
+
+        .item-doudleLine{
+            width: 400px;
+            height: 40px;
+            flex-direction: row;
+            display: flex;
+            border: solid black 1px;
+            margin-bottom: 1px;
+            background-color:rgb(135, 206, 250);
+        }
+
+        .left-child{
+            width: 50%;
+            height: 100%;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .right-child{
+            width: 50%;
+            height: 100%;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .tableTech{
+            width: 400px;
+            height: auto;
+            border: solid black 1px;
+            margin-bottom: 1px;
+            background-color:rgb(135, 206, 250);
+        }
+
+        table{
+            margin-left: 140px;
+        }
+
+        .errorL{
+            color: red;
+            margin-top: 10px;
+            width: 600px;
+            height: auto;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <form action="process_submit.php" method="POST">
+    <div class="container">
+        <div class="item-singleLine">
+            Форма регистрации:
+        </div>
+        <div class="item-doudleLine">
+            <div class="left-child">Имя:</div>
+            <div class="right-child">
+                <input type="text" name="userName" placeholder="Введите Ваше имя"/>
+            </div>
+        </div>
+        <div class="item-doudleLine">
+            <div class="left-child">Фамилия:</div>
+            <div class="right-child">
+                <input type="text" name="userSurname" placeholder="Введите Вашу фамилию"/>
+            </div>
+        </div>
+        <div class="item-doudleLine">
+            <div class="left-child">e-mail:</div>
+            <div class="right-child">
+                <input type="text" name="userMail" placeholder="Введите адрес почты"/>
+            </div>
+        </div>
+        <div class="item-doudleLine">
+            <div class="left-child">Дата рождения:</div>
+            <div class="right-child">
+                <input type="date" name="userAge" min="1900-01-01" max="2020-01-01">
+            </div>
+        </div>
+        <div class="item-doudleLine">
+            <div class="left-child">Ваш пол:</div>
+            <div class="right-child">
+                <input name="but1" type="radio" value="male">
+                <label for="but1">Муж.</label>
+                <input name="but1" type="radio" value="female">
+                <label for="but1">Жен.</label>
+            </div>
+        </div>
+        <div class="item-singleLine">
+            Технологии:
+        </div>
+        <div class="tableTech">
+            <table>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="check1">
+                        <label for="check1">HTML</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="check1">
+                        <label for="check1">CSS</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="check1">
+                        <label for="check1">React JS</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="check1">
+                        <label for="check1">Angular JS</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="check1">
+                        <label for="check1">Vue JS</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="check1">
+                        <label for="check1">jQuery</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="check1">
+                        <label for="check1">Node JS</label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="item-singleLine">
+            <input type="submit" value="Отправить форму">
+        </div>
+    </div>
+
+    <div class="container">
+        <div name="errorLog" class="errorL">
+
+        </div>
+    </div>
+</form>
+
+    <script src="app.js"></script>
+    
+</body>
+</html>
