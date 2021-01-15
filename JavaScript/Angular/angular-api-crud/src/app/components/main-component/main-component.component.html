@@ -1,0 +1,114 @@
+<div class="container-fluid alert-info text-center">
+    <table class="table table-success table-striped">
+        <tr>
+            <td>ItemID:</td>
+            <td>
+                <input type="text" class="form-control" #item_id value="{{ItemToEdit.ItemID}}" readonly/>
+            </td>
+        </tr>
+        <tr>
+            <td>ItemName:</td>
+            <td>
+                <input type="text" class="form-control" #item_name value="{{ItemToEdit.Name}}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>ItemPrice:</td>
+            <td>
+                <input type="text" class="form-control" #item_price value="{{ItemToEdit.Price}}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-success" (click)="addItem(item_name.value, item_price.value)">Add Item</button>&nbsp;
+            </td>
+            <td>
+                <button class="btn btn-success" (click)="saveItem( item_id.value, item_name.value, item_price.value)" style="display:none;" id="saveBtn">Save Item</button>
+            </td>
+        </tr>
+        
+        
+    </table>
+</div>
+
+<div class="container-fluid alert-danger">{{ validationMessage }}</div>
+
+
+<div class="container-fluid alert-info text-center">
+    <table class="table table-success table-striped">
+        
+        <tr *ngFor="let item of Items">
+            <td>{{item.ItemID}}</td>&nbsp;
+            <td>
+                <input type="text" class="form-control" #itemName value="{{item.Name}}" readonly/>
+            </td>&nbsp;
+            <td>
+                <input type="text" class="form-control" #itemPrice value="{{item.Price}}" readonly/>
+            </td>&nbsp;
+            <button class="btn btn-info" (click)="editItem(item.ItemID)">Edit</button>&nbsp;
+            <button class="btn btn-danger"(click)="deleteItem(item.ItemID)">Delete</button>
+        </tr>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+<div class="container-fluid alert-info text-center">
+    <table class="table table-success table-striped">
+        
+        <tr *ngFor="let item of Items">
+            <td>{{item.ItemID}}</td>&nbsp;
+            <td>
+                <input type="text" class="form-control" #itemName value="{{item.Name}}" readonly/>
+            </td>&nbsp;
+            <td>
+                <input type="text" class="form-control" #itemPrice value="{{item.Price}}" readonly/>
+            </td>&nbsp;
+            <button class="btn btn-info" (click)="editItem(item.ItemID)">Edit</button>&nbsp;
+            <button class="btn btn-danger"(click)="deleteItem(item.ItemID)">Delete</button>
+        </tr>
+    </table>
+</div>
+<div class="container-fluid alert-info text-center">
+<h5>
+    Также Вы можете добавить или отредактировать товар:
+</h5>
+<table class="table table-success table-striped"> 
+    <tr>
+        <td>
+            <input type="text" class="form-control" placeholder="Введите название товара.." #itemName value="{{ItemToEdit.Name}}"/>
+        </td>
+        <td>
+            <input type="text" class="form-control" placeholder="Укажите цену товара.." #itemPrice value="{{ItemToEdit.Price}}"/>
+        </td>
+        <button class="btn btn-success" (click)="addItem(itemName.value, itemPrice.value)">Add Item</button>&nbsp;
+        <button class="btn btn-success" (click)="saveItem(itemName.value, itemPrice.value)">Save Item</button>
+    </tr>
+</table>
+
+<div class="container-fluid alert-danger">{{ validationMessage }}</div>
+
+</div>-->

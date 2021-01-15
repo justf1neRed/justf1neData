@@ -1,0 +1,17 @@
+
+
+<div class="container-fluid alert-info text-center">
+<table class="table table-success table-striped">
+    
+    <tr *ngFor="let item of Items">
+        <td>{{item.ItemID}}</td>&nbsp;
+        <td>
+            <input type="text" class="form-control" #itemName value="{{item.Name}}" readonly/>
+        </td>&nbsp;
+        <td>
+            <input type="text" class="form-control" #itemPrice value="{{item.Price}}" readonly/>
+        </td>&nbsp;
+    </tr>
+</table>
+</div>
+
