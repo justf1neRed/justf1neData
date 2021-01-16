@@ -57,12 +57,19 @@ export class MainComponentComponent implements OnInit {
 
   saveItem(itemID: string, Name: string, Price: string){
 
-    let ItemToSave = new Item(parseInt(itemID), Name, parseInt(Price))
+    if(this.validateFromData(Name, parseInt(Price))){
+      let ItemToSave = new Item(parseInt(itemID), Name, parseInt(Price))
     
-    this.itemServise.saveItem(ItemToSave).subscribe((data)=>{console.log(data);
-    this.getItems();}, (err)=>{
-      console.log(err);
-    })
+      this.itemServise.saveItem(ItemToSave).subscribe((data)=>{console.log(data);
+      this.getItems();}, (err)=>{
+        console.log(err);
+      })
+    }
+    else{
+      this.validationMessage += "Данные не валидны!";
+      this.logger.logError(this.validationMessage, "Items info");
+    }
+  
     
   }
 
