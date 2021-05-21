@@ -1,0 +1,20 @@
+1. Для начала командой git remote просмотрю список настроенных репозиториев
+
+2. Поскольку указанный репозиторий отсутствует на моем компьютере, необходимо склонировать его
+$git clone git@example.com:example/test.git 
+
+3. Чтобы не возникло конфликта при попытке сделать push (в случае если какой-то другой разработчик также выполняет в это время push), следует сначала получить изменения репозитория (если таковые имеются)
+$git fetch git@example.com:example/test.git
+
+4. Добавляем файл 
+$git add dev readme.md
+
+5. Закомитим
+$git commit -m "New file has been added"
+
+6. Добавим ссылку локальному репозиторию на удаленный репозиторий
+$git remote add dev git@example.com:example/test.git
+
+7. Собственно, отправка файла readme.md через команду push
+$git push git@example.com:example/test.git dev
+

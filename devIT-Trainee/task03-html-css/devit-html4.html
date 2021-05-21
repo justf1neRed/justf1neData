@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task04-Login Page</title>
+
+    <style>
+        div{
+            align-items: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 14pt;
+        }
+
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .item-singleLine{
+            width: 400px;
+            height: 40px;
+            line-height: 40px;
+            margin-bottom: 1px;
+            border: solid black 1px;
+            text-align: center;
+            background-color:rgb(135, 206, 250);
+            
+        }
+
+        .item-doudleLine{
+            width: 400px;
+            height: 40px;
+            flex-direction: row;
+            display: flex;
+            border: solid black 1px;
+            margin-bottom: 1px;
+            background-color:rgb(135, 206, 250);
+        }
+
+        .left-child{
+            width: 50%;
+            height: 100%;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .right-child{
+            width: 50%;
+            height: 100%;
+            line-height: 40px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <form>
+    <div class="container">
+        <div class="item-singleLine">
+            Login Page:
+        </div>
+        <div class="item-doudleLine">
+            <div class="left-child">e-mail:</div>
+            <div class="right-child">
+                <input type="text" name="userMail" placeholder="Введите e-mail"/>
+            </div>
+        </div>
+        <div class="item-doudleLine">
+            <div class="left-child">Password:</div>
+            <div class="right-child">
+                <input type="password" name="userPass" placeholder="Введите пароль"/>
+            </div>
+        </div>
+
+    </div>
+</form>
+    
+</body>
+</html>
